@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+using namespace std;
 
 //设计演讲管理类
 class SpeechManager
