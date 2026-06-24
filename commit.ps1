@@ -1,6 +1,5 @@
 ﻿# 用法: .\commit.ps1 "提交说明"
 # 示例: .\commit.ps1 "更新 speechMatch 主程序"
-# 也可双击或在终端运行: commit.bat "提交说明"
 
 param(
     [Parameter(Mandatory = $false, Position = 0)]
@@ -117,7 +116,7 @@ if (-not $changes -and -not $ahead) {
 
 if ($changes) {
     if ([string]::IsNullOrWhiteSpace($Message)) {
-        Write-Error "有未提交的更改，请提供提交说明。示例: .\commit.bat `"更新主程序`""
+        Write-Error "有未提交的更改，请提供提交说明。示例: .\commit.ps1 `"更新主程序`""
     }
 
     Write-Step "暂存所有更改..."
@@ -138,7 +137,7 @@ if (-not (Push-ToGitHub)) {
         "常见原因: 网络不稳定、需要登录 GitHub、或防火墙拦截。",
         "",
         "请检查网络后再次运行:",
-        "  .\commit.bat",
+        "  .\commit.ps1",
         "",
         "当前状态:"
     )
