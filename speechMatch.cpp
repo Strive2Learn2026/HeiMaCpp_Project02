@@ -1,4 +1,5 @@
-#include "speechMatch.h"
+#include "speechManager.h"
+#include <windows.h>
 using namespace std;
 
 int main()
@@ -18,10 +19,12 @@ int main()
             break;
             case 3:
             break;
-            case 0:sm.exit();break;
+            case 0:
+            break;
             default:break;
         }
     //显示菜单
     sm.show_Menu();
     return 0;
+    }
 }
